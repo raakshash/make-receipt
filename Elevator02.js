@@ -1,18 +1,30 @@
+class ElevatorController {
+  constructor(){
+      this._commandQueue = [];
+  }
+  openDoor(){}  
+  closeDoor(){}
+  moveLift(){}
+  stopLift(){}
+};
+
 class Elevator {
     constructor(){
         this._capacity = 900;
         this._currentFloor = 0;
         this._nextFloor = 0;
         this._isLiftAvailable = true;
+        this._controller = new ElevatorController();
     }
     isLiftOverLoaded(){}
     isGoingUp(){}
+    isGoingDown(){}
     isLiftStopped(){}
     isLiftMoving(){}
-    moveLift(){}
+    addNewInstruction(){}
 };
 
-class ElevatorManager {
+class ElevatorSystemManager {
     constructor(){
         this._liftQueue = [];
         this._commandQueue = [];
@@ -26,7 +38,7 @@ class ElevatorManager {
 class Building {
     constructor(iFloorCount){
         this._floorCount = iFloorCount;
-        this._liftManager = new ElevatorManager();
+        this._liftManager = new ElevatorSystemManager();
     }
     startElevatorSystem(){this._liftManager.init(iLiftCount);}
     stopElevatorSystem(){}
