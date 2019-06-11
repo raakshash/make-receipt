@@ -44,10 +44,14 @@ class Building {
     stopElevatorSystem(){}
 };
 
+
+// entry function
 const main = function(){
     let floorCount = 10;
     let liftCount = 2;
     let building = new Building(floorCount);
     building.init(liftCount);
-
 }
+
+/*Entry -> */
+main();
